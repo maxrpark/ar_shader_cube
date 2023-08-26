@@ -101,7 +101,7 @@ const start = async () => {
 
                         vec3 color = palette(t, color_1, color_2, color_3, color_4);
 
-                        d = sin(d * 18.0 + uTime * 0.6) / 10.0;
+                        d = sin(d * 8.0 + uTime * 0.4 ) / 8.0;
                         d = abs(d);
                         // d = 0.01 / d;
 
@@ -144,8 +144,8 @@ const start = async () => {
     //@ts-ignore
     mesh.material.uniforms.uTime.value = elapsedTime;
 
-    mesh.rotation.x += 0.0015;
-    mesh.rotation.y += -0.0015;
+    mesh.rotation.x = elapsedTime * 0.15;
+    mesh.rotation.y = elapsedTime * 0.15;
 
     renderer.render(scene, camera);
   });
