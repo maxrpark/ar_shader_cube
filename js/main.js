@@ -115,8 +115,8 @@ const start = async () => {
     renderer.setAnimationLoop(() => {
         const elapsedTime = clock.getElapsedTime();
         mesh.material.uniforms.uTime.value = elapsedTime;
-        mesh.rotation.x = elapsedTime * 0.15;
-        mesh.rotation.y = elapsedTime * 0.15;
+        mesh.rotation.x = elapsedTime * 0.2;
+        mesh.rotation.y = elapsedTime * 0.2;
         renderer.render(scene, camera);
     });
 };
