@@ -29,7 +29,7 @@ const setResources = async () => {
 };
 
 if (USING_TEST_IMG) {
-  setARTestImage("../assets/pandorax.jpeg", setResources);
+  setARTestImage("../assets/pandora.jpeg", setResources);
 } else {
   document.addEventListener("DOMContentLoaded", () => setResources());
 }
