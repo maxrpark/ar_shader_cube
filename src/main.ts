@@ -101,7 +101,7 @@ const start = async () => {
 
                         vec3 color = palette(t, color_1, color_2, color_3, color_4);
 
-                        d = sin(d * 8.0 + uTime * 0.4 ) / 8.0;
+                        d = sin(d * 10.0 + uTime * 0.5 ) / 8.0;
                         d = abs(d);
                         // d = 0.01 / d;
 
