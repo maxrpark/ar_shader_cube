@@ -3,7 +3,7 @@ import { MindARThree } from "mindar-image-three";
 import { resourcesLoader } from "./utils/resourcesLoader.js";
 import { sources } from "./resources.js";
 import { setARTestImage } from "./utils/helperFunctions.js";
-const USING_TEST_IMG = true;
+const USING_TEST_IMG = false;
 let envMap = null;
 const setResources = async () => {
     try {
