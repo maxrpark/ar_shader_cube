@@ -3,7 +3,7 @@ import { MindARThree } from "mindar-image-three";
 import { resourcesLoader } from "./utils/resourcesLoader.js";
 import { sources } from "./resources.js";
 import { setARTestImage } from "./utils/helperFunctions.js";
-const USING_TEST_IMG = false;
+const USING_TEST_IMG = true;
 let envMap = null;
 const setResources = async () => {
     try {
@@ -115,8 +115,8 @@ const start = async () => {
     renderer.setAnimationLoop(() => {
         const elapsedTime = clock.getElapsedTime();
         mesh.material.uniforms.uTime.value = elapsedTime;
-        mesh.rotation.x = elapsedTime * 0.15;
-        mesh.rotation.y = elapsedTime * -0.15;
+        mesh.rotation.x += 0.0015;
+        mesh.rotation.y += -0.0015;
         renderer.render(scene, camera);
     });
 };

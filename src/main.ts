@@ -6,7 +6,7 @@ import { setARTestImage } from "./utils/helperFunctions.js";
 // import guiDebugger from "./utils/GUIDebugger.js";
 // const debugActive = window.location.hash === "#debug";
 
-const USING_TEST_IMG = false;
+const USING_TEST_IMG = true;
 
 let envMap: THREE.Texture | null = null;
 
@@ -144,8 +144,8 @@ const start = async () => {
     //@ts-ignore
     mesh.material.uniforms.uTime.value = elapsedTime;
 
-    mesh.rotation.x = elapsedTime * 0.15;
-    mesh.rotation.y = elapsedTime * -0.15;
+    mesh.rotation.x += 0.0015;
+    mesh.rotation.y += -0.0015;
 
     renderer.render(scene, camera);
   });
