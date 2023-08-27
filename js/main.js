@@ -1,27 +1,12 @@
 import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
-import { resourcesLoader } from "./utils/resourcesLoader.js";
-import { sources } from "./resources.js";
 import { setARTestImage } from "./utils/helperFunctions.js";
 const USING_TEST_IMG = false;
-let envMap = null;
-const setResources = async () => {
-    try {
-        const loadedResources = await resourcesLoader(sources);
-        const { environmentMap } = loadedResources;
-        envMap = environmentMap;
-        envMap.mapping = THREE.EquirectangularReflectionMapping;
-        start();
-    }
-    catch (error) {
-        console.log(error);
-    }
-};
 if (USING_TEST_IMG) {
-    setARTestImage("../assets/pandora.jpeg", setResources);
+    setARTestImage("../assets/pandora.jpeg", () => start());
 }
 else {
-    document.addEventListener("DOMContentLoaded", () => setResources());
+    document.addEventListener("DOMContentLoaded", () => start());
 }
 const start = async () => {
     const mindarThree = new MindARThree({
@@ -34,7 +19,6 @@ const start = async () => {
     renderer.toneMappingExposure = 1;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    scene.environment = envMap;
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1), new THREE.ShaderMaterial({
         vertexShader: `
                       varying vec2 vUvs;
