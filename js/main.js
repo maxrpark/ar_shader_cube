@@ -1,9 +1,9 @@
 import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 import { setARTestImage } from "./utils/helperFunctions.js";
-const USING_TEST_IMG = false;
+const USING_TEST_IMG = true;
 if (USING_TEST_IMG) {
-    setARTestImage("../assets/pandora.jpeg", () => start());
+    setARTestImage("../assets/max_logo.png", () => start());
 }
 else {
     document.addEventListener("DOMContentLoaded", () => start());
@@ -12,6 +12,8 @@ const start = async () => {
     const mindarThree = new MindARThree({
         container: document.body,
         imageTargetSrc: "../assets/targets/targets.mind",
+        filterMinCF: 0.0001,
+        filterBeta: 0.001,
     });
     const { renderer, scene, camera } = mindarThree;
     renderer.outputColorSpace;

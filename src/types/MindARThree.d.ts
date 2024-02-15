@@ -2,7 +2,12 @@ declare module "mindar-image-three" {
   import * as THREE from "three";
 
   export class MindARThree {
-    constructor(options: { container: HTMLElement; imageTargetSrc: string });
+    constructor(options: {
+      container: HTMLElement;
+      imageTargetSrc: string;
+      filterMinCF: number;
+      filterBeta: number;
+    });
 
     renderer: THREE.WebGLRenderer;
     scene: THREE.Scene;

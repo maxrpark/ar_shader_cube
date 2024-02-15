@@ -5,10 +5,10 @@ import { setARTestImage } from "./utils/helperFunctions.js";
 // import guiDebugger from "./utils/GUIDebugger.js";
 // const debugActive = window.location.hash === "#debug";
 
-const USING_TEST_IMG = false;
+const USING_TEST_IMG = true;
 
 if (USING_TEST_IMG) {
-  setARTestImage("../assets/pandora.jpeg", () => start());
+  setARTestImage("../assets/max_logo.png", () => start());
 } else {
   document.addEventListener("DOMContentLoaded", () => start());
 }
@@ -17,6 +17,8 @@ const start = async () => {
   const mindarThree = new MindARThree({
     container: document.body,
     imageTargetSrc: "../assets/targets/targets.mind",
+    filterMinCF: 0.0001,
+    filterBeta: 0.001,
   });
 
   const { renderer, scene, camera } = mindarThree;
