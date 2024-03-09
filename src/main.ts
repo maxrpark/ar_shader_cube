@@ -5,7 +5,7 @@ import { setARTestImage } from "./utils/helperFunctions.js";
 // import guiDebugger from "./utils/GUIDebugger.js";
 // const debugActive = window.location.hash === "#debug";
 
-const USING_TEST_IMG = true;
+const USING_TEST_IMG = false;
 
 if (USING_TEST_IMG) {
   setARTestImage("../assets/max_logo.png", () => start());

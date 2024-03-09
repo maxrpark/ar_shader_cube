@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 import { setARTestImage } from "./utils/helperFunctions.js";
-const USING_TEST_IMG = true;
+const USING_TEST_IMG = false;
 if (USING_TEST_IMG) {
     setARTestImage("../assets/max_logo.png", () => start());
 }
