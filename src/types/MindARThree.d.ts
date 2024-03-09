@@ -7,6 +7,8 @@ declare module "mindar-image-three" {
       imageTargetSrc: string;
       filterMinCF: number;
       filterBeta: number;
+      uiLoading?: string;
+      uiScanning?: string;
     });
 
     renderer: THREE.WebGLRenderer;

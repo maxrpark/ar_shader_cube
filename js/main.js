@@ -14,6 +14,7 @@ const start = async () => {
         imageTargetSrc: "../assets/targets/targets.mind",
         filterMinCF: 0.0001,
         filterBeta: 0.001,
+        uiScanning: "#screenScanning",
     });
     const { renderer, scene, camera } = mindarThree;
     renderer.outputColorSpace;
